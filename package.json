@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/vinstech8/IE#readme",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "github:hydrabolt/discord.js",
     "discord.js-commando": "^0.10.0",
     "eslint": "^5.5.0"
   }
