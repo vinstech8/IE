@@ -23,7 +23,7 @@ class say extends commando.Command {
     if (message.author.id !== config.ownerid) {
       message.react('🚫')
       console.log(`${message.author.username}#${message.author.discriminator} has unsuccessfully tried to access the say.js command.`)
-      return // Do I have to return a value? I hope not
+      return
     }
     // TODO: No handling for message deletion
     // TODO: No handling for channel mentions
