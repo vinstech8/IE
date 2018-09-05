@@ -25,7 +25,9 @@ class say extends commando.Command {
       console.log(`${message.author.username}#${message.author.discriminator} has unsuccessfully tried to access the say.js command.`)
       return
     }
-    // TODO: No handling for message deletion
+    // * Message Deletion
+    message.delete()
+      .catch(console.error)
     // TODO: No handling for channel mentions
     // TODO: No handling for 'in' notation
     // TODO: No handling for quote notation
