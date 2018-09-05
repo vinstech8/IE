@@ -19,11 +19,16 @@ class say extends commando.Command {
       }]
     })
   } async run (message, args) {
-    // ! No handling for owner limit
-    // ! No handling for message deletion
-    // ! No handling for channel mentions
-    // ! No handling for 'in' notation
-    // ! No handling for quote notation
+    // * Owner-Specific Lock
+    if (message.author.id !== config.ownerid) {
+      message.react('🚫')
+      console.log(`${message.author.username}#${message.author.discriminator} has unsuccessfully tried to access the say.js command.`)
+      return // Do I have to return a value? I hope not
+    }
+    // TODO: No handling for message deletion
+    // TODO: No handling for channel mentions
+    // TODO: No handling for 'in' notation
+    // TODO: No handling for quote notation
 
     message.channel.send(args.text)
   }
