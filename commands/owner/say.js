@@ -28,11 +28,14 @@ class say extends commando.Command {
     // * Message Deletion
     message.delete()
       .catch(console.error)
-    // TODO: No handling for channel mentions
+    if (!message.mentions.channels.first()) return message.channel.send(args.text) // Sends if no channel mention
+    else {
+      args.text.shift() // Please tell me these aren't treated as constants
+      return message.mentions.channels.send(args.text)
+    }
+
     // TODO: No handling for 'in' notation
     // TODO: No handling for quote notation
-
-    message.channel.send(args.text)
   }
 }
 
