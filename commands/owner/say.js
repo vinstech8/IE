@@ -30,8 +30,8 @@ class say extends commando.Command {
       .catch(console.error)
     if (!message.mentions.channels.first()) return message.channel.send(args.text) // Sends if no channel mention
     else {
-      args.text.shift() // Please tell me these aren't treated as constants
-      return message.mentions.channels.send(args.text)
+      let argsPlaceHolder = args.text.split(' ').shift()
+      return message.mentions.channels.send(argsPlaceHolder.join(' '))
     }
 
     // TODO: No handling for 'in' notation
