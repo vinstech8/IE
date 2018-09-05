@@ -37,7 +37,8 @@ client.on('warn', (e) => console.warn(e))
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-    ['basic', 'Basic commands']
+    ['basic', 'Basic commands'],
+    ['owner', 'Owner-limited commands']
   ])
   .registerDefaultGroups()
   .registerDefaultCommands()
