@@ -29,11 +29,12 @@ class say extends commando.Command {
     // * Message Deletion
     message.delete()
       .catch(console.error)
-    if (!message.mentions.channels.first()) return message.channel.send(args.text) // Sends if no channel mention
-    else {
+    
+    // * Specific Channel Sending
+    if (message.mentions.channels.first()) {
       let argsPlaceHolder = args.text.split(' ').shift()
       return message.mentions.channels.send(argsPlaceHolder.join(' '))
-    }
+    } else return message.channel.send(args.text) // Sends if no channel mention
 
     // TODO: No handling for leading 'in' notation
     // ie! say in #channel hi
