@@ -25,11 +25,11 @@ class say extends commando.Command {
       console.log(`${message.author.username}#${message.author.discriminator} has unsuccessfully tried to access the say.js command.`)
       return
     }
-    
+
     // * Message Deletion
     message.delete()
       .catch(console.error)
-    
+
     // * Specific Channel Sending
     if (message.mentions.channels.first()) {
       let argsPlaceHolder = args.text.split(' ').shift()
@@ -40,7 +40,7 @@ class say extends commando.Command {
     // ie! say in #channel hi
     // TODO: No handling for ending 'in' notation
     // ie! say hi in #channel
-    
+
     // TODO: No handling for quote notation
   }
 }
